@@ -51,6 +51,30 @@ public class UserRegistration {
          */
         return matcher.matches();
     }
+    public boolean emailAddress(String email) {
+        /**
+         * regex pattern for email
+         * 1)must contain character before @
+         * 2)must contain @ symbol after char
+         * 3)must contain char after @
+         * 4)must contain "."  symbol before com or in
+         */
+        String regex = "^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?";
+        /**
+         * Compile the Regex
+         */
+        Pattern pattern = Pattern.compile(regex);
+        /**
+         * Pattern class contains matcher() method to find matching between given useremail
+         * and regular expression.
+         */
+        Matcher matcher = pattern.matcher(email);
+        /**
+         * Return if the useremail matched the Regex
+         */
+        return matcher.matches();
+    }
+
 }
 
 
