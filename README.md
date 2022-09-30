@@ -1,1 +1,1 @@
-# user-registration_using_lambda_function
+# user-registration-using-lambda-function
