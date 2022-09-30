@@ -30,9 +30,28 @@ public class UserRegistration {
          */
         return match.matches();
     }
+
+    public boolean lastName(String lastName) {
+        /**
+         *  Regex to check valid userlastname.
+         *  1) Last name starts with Cap and has minimum 3 character
+         */
+        String regex = "^[A-Z]{1}[a-z]{3,}";
+        /**
+         *  Compile the Regex
+         */
+        Pattern pattern = Pattern.compile(regex);
+        /**
+         * Pattern class contains matcher() method to find matching between given userlastname
+         * and regular expression.
+         */
+        Matcher matcher = pattern.matcher(lastName);
+        /**
+         * Return if the userlastname matched the Regex
+         */
+        return matcher.matches();
+    }
 }
-
-
 
 
 

@@ -17,5 +17,20 @@ public class UserRegistrationTest {
         boolean result = userRegistration.firstName("poonam");
         Assertions.assertEquals(false, result);
     }
-}
 
+    /**
+     * test case for uc2
+     */
+    @Test
+    public void givenLastName_WhenInFormat_ShouldReturnTrue() {
+        boolean result = userRegistration.lastName("Desai");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenLastName_WhenOurOfFormat_ShouldReturnFalse() {
+        boolean result = userRegistration.lastName("desai");
+        Assertions.assertEquals(false, result);
+
+    }
+}
