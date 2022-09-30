@@ -38,13 +38,27 @@ public class UserRegistrationTest {
      */
     @Test
     public void givenEmail_WhenInFormat_ShouldReturnTrue() {
-        boolean result = userRegistration.emailAddress("abc@gmail.com.com");
+        boolean result = userRegistration.emailAddress("loharpoonam98@gmail.com");
         Assertions.assertEquals(true, result);
     }
 
     @Test
     public void givenEmail_WhenOurOfFormat_ShouldReturnFalse() {
-        boolean result = userRegistration.emailAddress("abc()*@gmail.com");
+        boolean result = userRegistration.emailAddress("LOharpoonam(8)@gmail.com");
+        Assertions.assertEquals(false, result);
+    }
+    /**
+     * test case for uc4 Mobile no.
+     */
+    @Test
+    public void givenPhoneNumber_WhenInFormat_ShouldReturnTrue() {
+        boolean result = userRegistration.phoneNumber("91 7058835985");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenPhoneNumber_WhenOurOfFormat_ShouldReturnFlase() {
+        boolean result = userRegistration.phoneNumber("+91 9604315270");
         Assertions.assertEquals(false, result);
     }
 }

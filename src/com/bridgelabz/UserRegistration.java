@@ -74,6 +74,27 @@ public class UserRegistration {
          */
         return matcher.matches();
     }
+    public boolean phoneNumber(String phoneNumber) {
+        /**
+         * regex pattern for email
+         * 1) Country code follow by space and 10 digit number
+         */
+        String regex = "^[0-9]{2}\\s{1}[0-9]{10}$";
+        /**
+         * Compile the Regex
+         */
+        Pattern pattern = Pattern.compile(regex);
+        /**
+         * Pattern class contains matcher() method to find matching between given phoneNumber
+         * and regular expression.
+         */
+        Matcher matcher = pattern.matcher(phoneNumber);
+        /**
+         * Return if the mobileNo matched the Regex
+         */
+        return matcher.matches();
+    }
+
 
 }
 
