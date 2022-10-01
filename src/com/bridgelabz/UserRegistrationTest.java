@@ -33,6 +33,7 @@ public class UserRegistrationTest {
         Assertions.assertEquals(false, result);
 
     }
+
     /**
      * test case for uc3 email
      */
@@ -47,6 +48,7 @@ public class UserRegistrationTest {
         boolean result = userRegistration.emailAddress("LOharpoonam(8)@gmail.com");
         Assertions.assertEquals(false, result);
     }
+
     /**
      * test case for uc4 Mobile no.
      */
@@ -59,6 +61,21 @@ public class UserRegistrationTest {
     @Test
     public void givenPhoneNumber_WhenOurOfFormat_ShouldReturnFlase() {
         boolean result = userRegistration.phoneNumber("+91 9604315270");
+        Assertions.assertEquals(false, result);
+    }
+
+    /**
+     * test case for UC5 password rule 1(min 8 chara)
+     */
+    @Test
+    public void givenPassword_WhenInFormat_ShouldReturnTrue() {
+        boolean result = userRegistration.passwordRule1("registration");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenPassword_WhenOurOfFormat_ShouldReturnFalse() {
+        boolean result = userRegistration.passwordRule1("reg");
         Assertions.assertEquals(false, result);
     }
 }

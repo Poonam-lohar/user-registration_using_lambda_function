@@ -94,9 +94,22 @@ public class UserRegistration {
          */
         return matcher.matches();
     }
+        public boolean passwordRule1 (String password){
+            /**
+             * regex pattern for password:must contain atleast 8 characters
+             * 1) ^ represents starting character of the string.
+             * 2) {8,} represents at least 8 characters and more than characters.
+             * 3) $ represents the end of the string.
+             */
+            String regex = "^[a-zA-z1-9]{8,}$";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(password);
+            return matcher.matches();
+        }
+    }
 
 
-}
+
 
 
 
