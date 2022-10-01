@@ -153,6 +153,19 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
+    public boolean emailAddressSample(String emailId) {
+        /**
+         * regex pattern for email
+         * 1)must contain character before @
+         * 2)must contain @ symbol after char
+         * 3)must contain char after @
+         * 4)must contain "."  symbol before com or in
+         */
+        String regex = "^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(emailId);
+        return matcher.matches();
+    }
 }
 
 

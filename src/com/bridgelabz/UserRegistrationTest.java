@@ -120,4 +120,18 @@ public class UserRegistrationTest {
         boolean result = userRegistration.passwordRule4("Registration@$#9");
         Assertions.assertEquals(false, result);
     }
+    /**
+     * test case for uc 9 emailAddressSample
+     */
+    @Test
+    public void givenEmail4_WhenInFormat_ShouldReturnTrue() {
+        boolean result = userRegistration.emailAddressSample("srushtideshmukh2909@gmail.com");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenEmail4_WhenOurOfFormat_ShouldReturnFalse() {
+        boolean result = userRegistration.emailAddressSample("poonam.@gmail.com");
+        Assertions.assertEquals(false, result);
+    }
 }
