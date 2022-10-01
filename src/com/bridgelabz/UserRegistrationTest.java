@@ -106,4 +106,18 @@ public class UserRegistrationTest {
         boolean result = userRegistration.passwordRule3("Registration");
         Assertions.assertEquals(false, result);
     }
+    /**
+     * test case for uc 8 password rule 4(1 special chara)
+     */
+    @Test
+    public void givenPasswordRule4_WhenInFormat_ShouldReturnTrue() {
+        boolean result = userRegistration.passwordRule4("Registration@5");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenPasswordRule4_WhenOurOfFormat_ShouldReturnFalse() {
+        boolean result = userRegistration.passwordRule4("Registration@$#9");
+        Assertions.assertEquals(false, result);
+    }
 }

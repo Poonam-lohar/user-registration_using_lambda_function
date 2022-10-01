@@ -137,6 +137,22 @@ public class UserRegistration {
         return matcher.matches();
 
     }
+    public boolean passwordRule4(String password) {
+        /**
+         * Regex to check valid password.
+         * 1) ^ represents starting character of the string.
+         * 2) {8,} represents at least 8 characters or more than that characters.
+         * 3) [a-zA-z1-9] represents a lower case alphabet must occur at least 8 or more than that.
+         * 4) [A-Z]{1} represents an upper case alphabet that must occur at least once.
+         * 5) [1-9]{1}represents a digit must occur at least once.
+         * 6) [@$^]{1} represents a at least once special character.
+         * 6) $ represents the end of the string.
+         */
+        String regex = "^[A-Z]{1}+[a-zA-z1-9]{9,}[@$^]{1}[1-9]{1}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
 }
 
 
