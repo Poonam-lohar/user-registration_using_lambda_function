@@ -122,6 +122,21 @@ public class UserRegistration {
         return matcher.matches();
 
     }
+    public boolean passwordRule3(String password) {
+        /**
+         * a) ^ represents starting character of the string.
+         * b) {8,} represents at least 8 characters or more than that characters.
+         * c) [a-zA-z1-9] represents a lower case alphabet must occur at least 8 or more than that.
+         * d) [A-Z]{1} represents an upper case alphabet that must occur at least once.
+         * e) [1-9]{1}represents a digit must occur at least once.
+         * f) $ represents the end of the string.
+         */
+        String regex = "^[A-Z]{1}+[a-zA-z1-9]{9,}[1-9]{1}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+
+    }
 }
 
 

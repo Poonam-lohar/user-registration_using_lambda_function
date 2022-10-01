@@ -69,7 +69,7 @@ public class UserRegistrationTest {
      */
     @Test
     public void givenPassword_WhenInFormat_ShouldReturnTrue() {
-        boolean result = userRegistration.passwordRule1("registration");
+        boolean result = userRegistration.passwordRule1("Registration");
         Assertions.assertEquals(true, result);
     }
 
@@ -90,6 +90,20 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordRule2_WhenOurOfFormat_ShouldReturnFalse() {
         boolean result = userRegistration.passwordRule2("reg");
+        Assertions.assertEquals(false, result);
+    }
+    /**
+     * test case for uc7 password rule 3(one numeric)
+     */
+    @Test
+    public void givenPasswordRule3_WhenInFormat_ShouldReturnTrue() {
+        boolean result = userRegistration.passwordRule3("Registration5");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenPasswordRule3_WhenOurOfFormat_ShouldReturnFalse() {
+        boolean result = userRegistration.passwordRule3("Registration");
         Assertions.assertEquals(false, result);
     }
 }
