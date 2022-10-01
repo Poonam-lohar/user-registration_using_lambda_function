@@ -106,7 +106,23 @@ public class UserRegistration {
             Matcher matcher = pattern.matcher(password);
             return matcher.matches();
         }
+    public boolean passwordRule2(String password) {
+        /**
+         * Regex to check valid password.
+         * 1)must contain atleast 8 characters
+         * 2)must contain one UpperCase
+         * 3) ^ represents starting character of the string.
+         * 4) {8,} represents at least 8 characters or more than that characters.
+         * 5) [A-Z]{1,} represents an upper case alphabet that must occur at least once.
+         * 6) $ represents the end of the string.
+         */
+        String regex = "^[A-Z]{1,}[a-zA-z1-9]{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+
     }
+}
 
 
 

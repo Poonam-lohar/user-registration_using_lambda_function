@@ -78,4 +78,18 @@ public class UserRegistrationTest {
         boolean result = userRegistration.passwordRule1("reg");
         Assertions.assertEquals(false, result);
     }
+    /**
+     * test case for uc6 password rule 2(one uppercase)
+     */
+    @Test
+    public void givenPasswordRule2_WhenInFormat_ShouldReturnTrue() {
+        boolean result = userRegistration.passwordRule2("Registration");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenPasswordRule2_WhenOurOfFormat_ShouldReturnFalse() {
+        boolean result = userRegistration.passwordRule2("reg");
+        Assertions.assertEquals(false, result);
+    }
 }
